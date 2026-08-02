@@ -54,7 +54,10 @@
     }
 
     .step.active {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      box-sizing: border-box;
     }
 
     @keyframes stepFadeIn {
@@ -246,6 +249,8 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     .option-btn {
@@ -680,6 +685,10 @@
       padding: 28px 20px 32px;
       border: none;
       box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
     }
 
     /* Step 1 auto-fit 100vh */
@@ -735,6 +744,28 @@
       .option-btn { font-size: 0.92rem; padding: 16px 18px; }
       .cards-grid { gap: 8px; }
       .card-badge { width: 24px; height: 24px; font-size: 0.65rem; }
+    }
+
+    /* Vertical scaling for small screens to prevent scrolling on questions */
+    @media (max-height: 720px) {
+      .option-btn { padding: 14px 16px; font-size: 0.95rem; }
+      h2 { font-size: 1.25rem; margin-bottom: 12px; }
+      .options { gap: 8px; }
+      .step-inner { padding: 16px 12px 20px; }
+      .logo-wrap { margin-bottom: 12px; }
+      .logo-wrap img { height: 60px; }
+      .progress-bar-wrap { margin-bottom: 16px; }
+      .step { padding: 16px 12px; }
+    }
+
+    @media (max-height: 600px) {
+      .option-btn { padding: 10px 14px; font-size: 0.9rem; }
+      h2 { font-size: 1.15rem; margin-bottom: 8px; }
+      .options { gap: 6px; }
+      .logo-wrap { margin-bottom: 8px; }
+      .logo-wrap img { height: 50px; }
+      .progress-bar-wrap { margin-bottom: 12px; }
+      .step { padding: 12px 8px; }
     }
 
     @media (min-width: 481px) {
