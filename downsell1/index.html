@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limpieza de Linaje - Oferta Final</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --noche:      #16142A;
+      --terciopelo: #221E3D;
+      --oro:        #D4A94E;
+      --oro-suave:  #8A7443;
+      --perla:      #F3EAD8;
+      --bruma:      #A79FC4;
+      --alerta:     #C4443A;
+      --vela:       #E8734A;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--noche);
+      color: var(--perla);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* BLOCO 1 - Alerta Topo */
+    .alert-bar {
+      width: 100%;
+      background-color: var(--alerta);
+      color: var(--perla);
+      text-align: center;
+      padding: 15px 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+      animation: pulse-light 2s infinite ease-in-out;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    @keyframes pulse-light {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; }
+    }
+
+    /* Container Central */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* BLOCO 2 - Selo */
+    .mystic-seal {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+    
+    .mystic-seal svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--oro);
+    }
+
+    /* BLOCO 3 - Headline */
+    .headline-block {
+      text-align: center;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+
+    .main-headline {
+      font-family: 'Marcellus', serif;
+      font-size: 34px;
+      color: var(--perla);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .sub-headline {
+      font-size: 19px;
+      color: var(--bruma);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .main-headline { font-size: 26px; }
+      .sub-headline { font-size: 17px; }
+    }
+
+    /* BLOCO 4 - Body */
+    .body-copy {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--perla);
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .body-copy p {
+      margin-bottom: 20px;
+    }
+
+    .body-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-gold {
+      color: var(--oro);
+      font-weight: 700;
+    }
+
+    /* BLOCO 5 - Stack & Caixa de Preço */
+    .offer-block {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .stack-list {
+      background: rgba(34, 30, 61, 0.5); 
+      border: 1px solid var(--oro-suave);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .stack-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .stack-list ul {
+      list-style: none;
+    }
+
+    .stack-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--perla);
+    }
+    
+    .stack-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .stack-list li .check {
+      color: var(--oro);
+      margin-right: 10px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .price-box {
+      background: var(--terciopelo);
+      border: 1px solid var(--oro);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+    
+    .price-box-title {
+      font-size: 17px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .price-display {
+      margin-bottom: 20px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: var(--bruma);
+      font-size: 20px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .new-price {
+      font-family: 'Marcellus', serif;
+      font-size: 52px;
+      color: var(--oro);
+      line-height: 1;
+      display: block;
+    }
+
+    .price-subtext {
+      font-size: 15px;
+      color: var(--bruma);
+      line-height: 1.5;
+    }
+
+    /* BLOCO 6 - Garantia */
+    .guarantee-block {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--bruma);
+      text-align: center;
+      margin-bottom: 32px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    .guarantee-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* BLOCO 7 - Decisão */
+    .decision-zone {
+      width: 100%;
+      text-align: center;
+    }
+
+    .decision-text {
+      font-family: 'Marcellus', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--perla);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    
+    /* Widget container */
+    #hotmart-sales-funnel {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BLOCO 1 - Barra de Alerta -->
+  <div class="alert-bar">
+    🚨 ¡ESPERA! No cierres esta página todavía...
+  </div>
+
+  <div class="container">
+    
+    <!-- BLOCO 2 - Selo Místico -->
+    <div class="mystic-seal">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z"/>
+      </svg>
+    </div>
+
+    <!-- BLOCO 3 - Headline -->
+    <div class="headline-block">
+      <h1 class="main-headline">Esta es la última vez que vas a ver esta oferta.</h1>
+      <p class="sub-headline">Entiendo. Quizás los $27 no estaban en tu presupuesto justo hoy…</p>
+    </div>
+
+    <!-- BLOCO 4 - Corpo -->
+    <div class="body-copy">
+      <p>Pero sé lo que sentiste cuando hablé de tu madre y de tu abuela. Sé que reconociste ese amarre heredado, porque las cartas no se equivocan contigo.</p>
+      
+      <p>Como te expliqué, romper tu amarre sin cortar la raíz de tu linaje es como cortar la mala hierba sin arrancarla: en unas semanas <span class="highlight-gold">vuelve a crecer</span>, y todo lo que el Código destrabó se traba otra vez. No quiero que unos dólares sean la razón por la que la raíz heredada regrese y te robe los resultados que ya son tuyos.</p>
+      
+      <p>Por eso voy a hacer algo que casi nunca hago, y que le hará honor a la promesa que le hice a mi abuela: <span class="highlight-gold">voy a asumir parte del costo por ti</span>. No porque necesites que te lo ruegue, sino porque tus ancestras esperaron generaciones por la mujer que rompiera esta cadena — y no voy a dejar que el dinero sea lo que la detenga justo ahora.</p>
+    </div>
+
+    <!-- BLOCO 5 - Oferta e Preço -->
+    <div class="offer-block">
+      <div class="stack-list">
+        <div class="stack-title">Solo en esta página, y por única vez, te llevas la Limpieza de Linaje completa:</div>
+        <ul>
+          <li><span class="check">✔</span> Ritual de Corte de Raíz — 7 noches</li>
+          <li><span class="check">✔</span> La Oración de los Nombres</li>
+          <li><span class="check">✔</span> El Sello de la Última Heredera</li>
+          <li><span class="check">✔</span> Los 3 regalos (Mapa del Árbol, Frecuencia del Linaje y el regalo secreto)</li>
+        </ul>
+      </div>
+
+      <div class="price-box">
+        <p class="price-box-title">En lugar de los $27 que pagan las demás, hoy la activas completa por un único pago:</p>
+        <div class="price-display">
+          <span class="old-price">Precio normal: $27.00</span>
+          <span class="new-price">$13.50</span>
+        </div>
+        <p class="price-subtext">Sin mensualidades, sin ningún cargo escondido. Es menos de lo que gastas en un pedido de comida que se acaba en veinte minutos.</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 6 - Garantia -->
+    <div class="guarantee-block">
+      <div class="guarantee-icon">🛡️</div>
+      <div>Con la misma garantía total de 30 días. Si sientes que no te ayudó, me escribes y te devuelvo cada centavo — y te quedas con la Limpieza completa, de regalo, para siempre.</div>
+    </div>
+
+    <!-- BLOCO 7 - Decisão -->
+    <div class="decision-zone">
+      <p class="decision-text">Tú decides si cierras la raíz hoy, o si la dejas viva esperando volver a crecer.</p>
+      
+      <!-- Widget Hotmart: manter íntegro -->
+      <div id="hotmart-sales-funnel"></div>
+      <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+      <script>
+        if (typeof checkoutElements !== 'undefined') {
+          checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        } else {
+          window.addEventListener('load', function() {
+            checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+          });
+        }
+      </script>
+
+    </div>
+
+  </div>
+
+  <!-- Tracker -->
+  <script>var PAGE_ID='downsell1';</script>
+  <script src="../tracker.js"></script>
+  
+</body>
+</html>
