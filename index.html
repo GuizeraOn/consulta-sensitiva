@@ -682,12 +682,42 @@
       box-shadow: none;
     }
 
-    /* Step 1 doesn't get the card bg */
+    /* Step 1 auto-fit 100vh */
+    #step-1.active {
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      padding: 20px 16px 24px;
+    }
+    
     #step-1 .step-inner {
       background: transparent;
       border: none;
       box-shadow: none;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex: 1;
+      width: 100%;
+    }
+
+    #step-1 .logo-wrap,
+    #step-1 h1,
+    #step-1 .hero-img-wrap,
+    #step-1 p,
+    #step-1 .mystic-divider {
+      margin-bottom: 0;
+    }
+    
+    #step-1 h1 {
+      margin-top: 8px;
+    }
+    
+    #step-1 .hero-img-wrap img {
+      max-height: 38vh;
+      width: auto;
+      object-fit: contain;
     }
 
     /* Step 9 doesn't either */
