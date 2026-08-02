@@ -1086,7 +1086,7 @@
       <vturb-smartplayer id="vid-6a6f608cce1530e329a6254e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 150% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/ace03ac0-59e6-408a-87f2-f619ef7692f8/players/6a6f608cce1530e329a6254e/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
     </div>
 
-    <a href="https://pay.hotmart.com/I106983853V?checkoutMode=10" class="btn-gold" id="btn-buy" style="margin-top: 28px; text-decoration: none; text-align: center; display: block; box-sizing: border-box;">
+    <a href="https://pay.hotmart.com/I106983853V?checkoutMode=10" class="btn-gold" id="btn-buy" style="margin-top: 28px; text-decoration: none; text-align: center; display: none; box-sizing: border-box;">
       ¡Sí, Quiero Activar el Código!
     </a>
   </div>
@@ -1138,6 +1138,17 @@
       // Start loading animation if entering step 7
       if (targetId === 'step-7') {
         startLoading();
+      }
+
+      // Show buy button after 16:36 (996 seconds) on VSL step
+      if (targetId === 'step-9') {
+        setTimeout(() => {
+          const btnBuy = document.getElementById('btn-buy');
+          if (btnBuy) {
+            btnBuy.style.display = 'block';
+            btnBuy.style.animation = 'stepFadeIn 1s ease-out';
+          }
+        }, 996000);
       }
     }
   }
