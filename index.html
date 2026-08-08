@@ -1166,6 +1166,14 @@
             btnBuy.style.animation = 'stepFadeIn 1s ease-out';
           }
         }, 996000);
+
+        // Back redirect trap for browser back button
+        try {
+          history.pushState(null, null, location.href);
+          window.onpopstate = function () {
+            window.location.href = 'https://pay.hotmart.com/I106983853V?off=l32zhdef&checkoutMode=10';
+          };
+        } catch (e) {}
       }
     }
   }
@@ -1312,7 +1320,7 @@
   // STEP 9 — VSL BACK BUTTON
   // ============================================
   document.getElementById('vsl-back').addEventListener('click', function () {
-    location.reload();
+    window.location.href = 'https://pay.hotmart.com/I106983853V?off=l32zhdef&checkoutMode=10';
   });
 </script>
 
